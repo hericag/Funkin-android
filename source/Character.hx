@@ -620,7 +620,24 @@ class Character extends FlxSprite
 				addOffset("prettyGoodAnim", 45, 20);
 				playAnim('idle');
 				flipX = true;
-		}
+				
+				case 'omori':
+				tex = Paths.getSparrowAtlas('characters/omori_assets');
+				frames = tex;
+				animation.addByPrefix('idle', "omori idle", 24);
+				animation.addByPrefix('singUP', 'omori up note ', 24, false);
+				animation.addByPrefix('singDOWN', 'omori down note ', 24, false);
+				animation.addByPrefix('singLEFT', 'omori right Note ', 24, false);
+				animation.addByPrefix('singRIGHT', 'omori left Note ', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 24, 56);
+				addOffset("singRIGHT", -1, -7);
+				addOffset("singLEFT", 100, -14);
+				addOffset("singDOWN", 98, -90);
+				playAnim('idle');
+				flipX = true;
+	 }
 
 		dance();
 
